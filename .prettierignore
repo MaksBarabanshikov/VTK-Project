@@ -1,0 +1,7 @@
+# Ignore artifacts:
+dist
+build
+public
+
+# Ignore all JSON files:
+*.json
