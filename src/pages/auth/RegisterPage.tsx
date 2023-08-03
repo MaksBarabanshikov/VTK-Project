@@ -54,7 +54,7 @@ const RegisterPage = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Stack gap={30}>
                     <FormControl>
-                        <Input placeholder={'Email'} type={'text'} {...register('name')}/>
+                        <Input placeholder={'Name'} type={'text'} {...register('name')}/>
                         <ErrorMessage errorMessage={errors.name} />
                     </FormControl>
                     <FormControl>
