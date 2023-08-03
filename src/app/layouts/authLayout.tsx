@@ -5,13 +5,13 @@ import {
   Heading,
   Image,
   Stack,
-  Switch,
-  Text, useColorMode,
+  Text,
+  useColorMode,
   useToast,
 } from '@chakra-ui/react';
-import { LineWrapper, Logo } from '@/shared/ui';
+import { CloudLayout, LineWrapper, Logo } from '@/shared/ui';
 import { GoogleCredentialResponse, GoogleLogin } from '@react-oauth/google';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import GirlImage from '@/shared/assets/img/girl.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from '@emotion/styled';
@@ -19,10 +19,12 @@ import styled from '@emotion/styled';
 import Moon from '@/shared/assets/img/moon.png';
 import Stars from '@/shared/assets/img/stars.png';
 import { zIndex } from '@/app/configuration';
+import { ADMIN_LAYOUT } from '@/app/configuration/routerPaths.ts';
+import { ThemeToggle } from '@/feature/ThemeToggle';
 
 export const AuthLayout = () => {
   const toast = useToast();
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   const handleGoogleOnSuccess = (response: GoogleCredentialResponse) => {
     console.log(response);
     toast({
@@ -52,7 +54,7 @@ export const AuthLayout = () => {
 
   return (
       <Container maxWidth={{ base: '1400px' }} marginY={10}>
-          <Box as={'section'} position={'relative'} backgroundColor={colorMode === 'light' ? '#fff' : '#151E3B'} borderRadius={'60px'} overflow={'hidden'} boxShadow={colorMode === 'light' ? '2px 10px 20px 10px rgba(0,0,0,0.2)' : '2px 10px 20px 10px rgba(255,255,255,0.2)'}>
+          <Box as={'section'} position={'relative'} backgroundColor={colorMode === 'light' ? 'base.light' : 'base.dark'} borderRadius={'60px'} overflow={'hidden'} boxShadow={colorMode === 'light' ? '2px 10px 20px 10px rgba(0,0,0,0.2)' : '2px 10px 20px 10px rgba(255,255,255,0.2)'}>
               <AnimatePresence mode={'wait'}>
                   { colorMode === 'dark' && <AbsoluteContainer>
                       <motion.img src={Moon} initial={{ y: -300, x: -300, opacity: 0 }} animate={{ y: -50, x: -50, opacity: 1 }} exit={{ y: -300, x: -300, opacity: 0 }} />
@@ -60,10 +62,11 @@ export const AuthLayout = () => {
                   </AbsoluteContainer> }
               </AnimatePresence>
               <Flex position={'relative'} zIndex={zIndex.plus}>
-                  <Stack width={'50vw'} padding={10}>
+                  <Stack width={'50vw'} padding={10} position={'relative'}>
+                      <CloudLayout right={-10} />
                       <Flex justifyContent={'space-between'}>
                           <Logo />
-                          <Switch colorScheme={'red'} size={'lg'} onChange={toggleColorMode} />
+                          <ThemeToggle />
                       </Flex>
                       <Stack width={'420px'} margin={'auto'}>
                           <Heading textAlign={'center'}>Welcome <Text display={'inline'} color={'red.base'}>Player</Text></Heading>
@@ -74,6 +77,7 @@ export const AuthLayout = () => {
                           <Center>
                               <LineWrapper>Or</LineWrapper>
                           </Center>
+                          <Link to={ADMIN_LAYOUT}>ADMIN</Link>
                           <AnimatePresence mode={'wait'} presenceAffectsLayout={true}>
                               <Outlet />
                           </AnimatePresence>

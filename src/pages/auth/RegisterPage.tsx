@@ -48,7 +48,7 @@ const RegisterPage = () => {
   const { errors } = formState;
 
   const onSubmit = (data: any | RegisterInputs) => console.log(data);
-    
+
   return (
         <SlideMotion>
             <form onSubmit={handleSubmit(onSubmit)}>

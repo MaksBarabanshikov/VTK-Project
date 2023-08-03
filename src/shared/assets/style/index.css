@@ -1,0 +1,22 @@
+.admin-nav {
+    position: relative;
+    transition: all 0.15s ease-in-out;
+}
+
+.admin-nav:after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 0;
+    right: 0;
+    top: 0;
+    background: red;
+    position: absolute;
+    border-radius: 10px;
+
+    transition: all 0.15s ease-in-out;
+}
+
+.admin-nav.active:after {
+    height: 100%;
+}

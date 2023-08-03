@@ -4,7 +4,9 @@ import { AnimatePresence } from 'framer-motion';
 
 import styled from '@emotion/styled';
 import { zIndex } from '@/app/configuration';
-import { Container } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
+import { SideBar } from '@/widgets/SideBar';
+import { ThemeToggle } from '@/feature/ThemeToggle';
 
 export const Layout: FC = () => {
   const { pathname } = useLocation();
@@ -14,6 +16,7 @@ export const Layout: FC = () => {
   }, [pathname]);
 
   const SMain = styled.main`
+    display: flex;
     margin-top: 10px;
     position: relative;
          z-index: ${zIndex.base};
@@ -22,7 +25,11 @@ export const Layout: FC = () => {
   return (
     <Fragment>
       <SMain>
-         <Container maxWidth={{ base: '1400px' }}>
+         <SideBar />
+         <Container maxWidth={{ base: 'full' }}>
+             <Box width={'full'} height={'120px'} borderWidth={1}>
+                 <ThemeToggle />
+             </Box>
              <AnimatePresence mode={'wait'}>
                  <Outlet />
              </AnimatePresence>

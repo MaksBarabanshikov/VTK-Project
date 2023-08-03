@@ -26,6 +26,10 @@ const appTheme = extendTheme({
     '100': '60px',
   },
   colors: {
+    base: {
+      light: '#fff',
+      dark: '#151E3B',
+    },
     primary: {
       900: '#424141',
       800: 'rgba(30, 30, 30, 0.70)',

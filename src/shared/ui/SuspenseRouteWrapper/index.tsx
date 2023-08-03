@@ -2,11 +2,14 @@ import { FC, PropsWithChildren, Suspense } from 'react';
 import { FullscreenCenter } from '@/shared/ui';
 import { Spinner } from '@chakra-ui/react';
 
-export const SuspenseRouteWrapper:FC<PropsWithChildren> = ({ children }) => {
+interface SuspenseRouteWrapperProps extends PropsWithChildren {
+  is100Vh?: boolean
+}
+export const SuspenseRouteWrapper:FC<SuspenseRouteWrapperProps> = ({ children, is100Vh = false }) => {
   return (
       <Suspense
           fallback={
-              <FullscreenCenter>
+              <FullscreenCenter is100Vh={is100Vh}>
                   <Spinner color={'red.base'} size={'xl'} />
               </FullscreenCenter>
           }

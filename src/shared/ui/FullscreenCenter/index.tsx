@@ -1,9 +1,12 @@
 import { Box } from '@chakra-ui/react';
 import { FC, PropsWithChildren } from 'react';
 
-export const FullscreenCenter: FC<PropsWithChildren> = ({ children }) => {
+interface FullscreenCenterProps extends PropsWithChildren {
+  is100Vh?: boolean
+}
+export const FullscreenCenter: FC<FullscreenCenterProps> = ({ children, is100Vh = false }) => {
   return (
-    <Box width={'full'} height={'90vh'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+    <Box width={'full'} height={is100Vh ? '90vh' : '200px'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
       {children}
     </Box>
   );
