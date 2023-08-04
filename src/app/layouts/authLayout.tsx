@@ -19,7 +19,7 @@ import styled from '@emotion/styled';
 import Moon from '@/shared/assets/img/moon.png';
 import Stars from '@/shared/assets/img/stars.png';
 import { zIndex } from '@/app/configuration';
-import { ADMIN_LAYOUT } from '@/app/configuration/routerPaths.ts';
+import { ADMIN_CARD } from '@/app/configuration/routerPaths.ts';
 import { ThemeToggle } from '@/feature/ThemeToggle';
 
 export const AuthLayout = () => {
@@ -77,7 +77,7 @@ export const AuthLayout = () => {
                           <Center>
                               <LineWrapper>Or</LineWrapper>
                           </Center>
-                          <Link to={ADMIN_LAYOUT}>ADMIN</Link>
+                          <Link to={ADMIN_CARD}>ADMIN</Link>
                           <AnimatePresence mode={'wait'} presenceAffectsLayout={true}>
                               <Outlet />
                           </AnimatePresence>
