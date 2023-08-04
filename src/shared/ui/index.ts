@@ -5,6 +5,7 @@ export { LineWrapper } from './LineWrapper';
 export { ErrorMessage } from './ErrorMessage';
 export { CloudLayout } from './CloudLayout';
 export { VTKPopover } from './VTKPopover';
+export { Sticky } from './Sticky';
 
 
 // ------- motion exports ------------

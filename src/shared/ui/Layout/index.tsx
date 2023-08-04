@@ -18,7 +18,7 @@ export const Layout: FC = () => {
   const SMain = styled.main`
     display: flex;
     position: relative;
-         z-index: ${zIndex.base};
+    z-index: ${zIndex.base};
   `;
 
   return (
