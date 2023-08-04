@@ -1,23 +1,13 @@
-import { extendTheme, StyleFunctionProps, ThemeConfig } from '@chakra-ui/react';
+import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
+
+import { InputStyles as Input } from '@/app/libs/themeConponents/InputStyles.ts';
+import { ButtonStyles as Button } from '@/app/libs/themeConponents/ButtonStyles.ts';
 
 const config: ThemeConfig = {
   useSystemColorMode: false,
   initialColorMode: 'light',
   disableTransitionOnChange: false,
-};
-
-const components = {
-  Input: {
-    variants: {
-      outline: (props: StyleFunctionProps) => ({
-        borderColor: props.colorMode === 'light' ?  'gray.100' : 'red.base',
-      }),
-    },
-    defaultProps: {
-      variant: 'outline',
-    },
-  },
 };
 
 const appTheme = extendTheme({
@@ -27,6 +17,7 @@ const appTheme = extendTheme({
     heading: "'Monserrat', sans-serif",
   },
   fontSizes: {
+    '14': '14px',
     '16': '16px',
     '20': '20px',
     '24': '24px',
@@ -57,9 +48,12 @@ const appTheme = extendTheme({
     gray: {
       100: '#D2D2D2',
       200:'#F0F0F0',
+      300: '#FAFAFA',
+      400: '#BBB',
     },
     red: {
       'base': '#F43434',
+      '200': '#F43434',
     },
   },
   styles: {
@@ -71,7 +65,10 @@ const appTheme = extendTheme({
       },
     }),
   },
-  components,
+  components: {
+    Input,
+    Button,
+  },
   breakpoints: {
     xs: '460px',
     sm: '560px',

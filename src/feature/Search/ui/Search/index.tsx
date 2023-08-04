@@ -2,18 +2,21 @@ import { Icon, Input, InputGroup, InputLeftElement, InputProps } from '@chakra-u
 import { VTKSearchIcon } from '@/app/libs/icons.tsx';
 import { FC } from 'react';
 
-interface ISearchProps extends InputProps {}
+interface ISearchProps extends InputProps {
+  variant?: string;
+}
 
-export const Search:FC<ISearchProps> = ({ ...rest }) => {
+export const Search:FC<ISearchProps> = ({ variant = 'solid', ...rest }) => {
   return (
-        <InputGroup>
+        <InputGroup h={'full'}>
             <InputLeftElement
+                h={'full'}
                 pointerEvents={'none'}
                 color={'red.base'}
             >
-                <Icon mt={'5px'} as={VTKSearchIcon} />
+                <Icon ml={'5px'} as={VTKSearchIcon} />
             </InputLeftElement>
-            <Input size={'lg'} placeholder={'Search here'} borderRadius={'30px'} {...rest} />
+            <Input size={'lg'} h={'full'} placeholder={'Search here'} borderRadius={'30px'} variant={variant} colorScheme={'red'} {...rest} />
         </InputGroup>
   );
 };

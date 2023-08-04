@@ -6,10 +6,10 @@ import { User } from '@/feature/User';
 export const Header = () => {
   return (
       <Grid as={'header'} h={'110px'} templateColumns={'4fr 2fr 1fr'} gap={'90px'} py={'24px'} alignItems={'center'}>
-          <GridItem>
+          <GridItem h={'full'}>
               <Search/>
           </GridItem>
-          <GridItem>
+          <GridItem h={'full'}>
               <User />
           </GridItem>
           <GridItem textAlign={'end'}>

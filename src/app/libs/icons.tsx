@@ -97,3 +97,25 @@ export const VTKSearchIcon = createIcon({
   ),
 });
 
+export const VTKArrowIcon = createIcon({
+  displayName: 'VTKArrowIcon',
+  viewBox: '0 0 15 8',
+  path: (
+        <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0.352905H14.98L7.48999 7.41173L0 0.352905Z" fill="currentColor"/>
+        </svg>
+  ),
+});
+
+export const VTKHumbIcon = createIcon({
+  displayName: 'VTKHumbIcon',
+  viewBox: '0 0 22 22',
+  path: (
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.05957 9.23535H18.9419V12.7648H3.05957V9.23535Z" fill="currentColor"/>
+          <path d="M3.05957 17.9328C3.05957 18.2002 3.19901 18.4567 3.44722 18.6458C3.69543 18.8349 4.03208 18.9412 4.3831 18.9412H17.6184C17.9694 18.9412 18.3061 18.8349 18.5543 18.6458C18.8025 18.4567 18.9419 18.2002 18.9419 17.9328V15.4117H3.05957V17.9328Z" fill="currentColor"/>
+          <path d="M17.6184 3.05884H4.3831C4.03208 3.05884 3.69543 3.16508 3.44722 3.35419C3.19901 3.5433 3.05957 3.7998 3.05957 4.06724V6.58825H18.9419V4.06724C18.9419 3.7998 18.8025 3.5433 18.5543 3.35419C18.3061 3.16508 17.9694 3.05884 17.6184 3.05884Z" fill="currentColor"/>
+      </svg>
+  ),
+});
+
