@@ -1,10 +1,23 @@
-import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+import { extendTheme, StyleFunctionProps, ThemeConfig } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 
 const config: ThemeConfig = {
   useSystemColorMode: false,
   initialColorMode: 'light',
   disableTransitionOnChange: false,
+};
+
+const components = {
+  Input: {
+    variants: {
+      outline: (props: StyleFunctionProps) => ({
+        borderColor: props.colorMode === 'light' ?  'gray.100' : 'red.base',
+      }),
+    },
+    defaultProps: {
+      variant: 'outline',
+    },
+  },
 };
 
 const appTheme = extendTheme({
@@ -42,8 +55,8 @@ const appTheme = extendTheme({
       100: '#0083D6',
     },
     gray: {
-      100: '#D9D9D9',
-      200: 'rgba(217, 217, 217, 0.30)',
+      100: '#D2D2D2',
+      200:'#F0F0F0',
     },
     red: {
       'base': '#F43434',
@@ -58,6 +71,7 @@ const appTheme = extendTheme({
       },
     }),
   },
+  components,
   breakpoints: {
     xs: '460px',
     sm: '560px',

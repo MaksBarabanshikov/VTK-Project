@@ -1,5 +1,3 @@
-import { PlanetIcon, StatsIcon } from '@/app/libs/icons.tsx';
-import { CalendarIcon, ChatIcon, EmailIcon, SettingsIcon, SunIcon } from '@chakra-ui/icons';
 import { TNavItem } from '@/widgets/SideBar/model';
 import {
   ADMIN_CALENDAR,
@@ -10,41 +8,50 @@ import {
   ADMIN_EMAIL,
   ADMIN_SETTINGS,
 } from '@/app/configuration/routerPaths.ts';
+import {
+  VTKCalendarIcon,
+  VTKCardIcon,
+  VTKCommentIcon,
+  VTKDashboardIcon,
+  VTKDeckIcon,
+  VTKEmailIcon,
+  VTKSettingsIcon,
+} from '@/app/libs/icons.tsx';
 
 export const navItem: TNavItem[] = [
   {
     title: 'Dashboard',
-    icon: StatsIcon,
+    icon: VTKDashboardIcon,
     link: ADMIN_DASHBOARD,
   },
   {
     title: 'Email',
-    icon: EmailIcon,
+    icon: VTKEmailIcon,
     link: ADMIN_EMAIL,
   },
   {
     title: 'Chat',
-    icon: ChatIcon,
+    icon: VTKCommentIcon,
     link: ADMIN_CHAT,
   },
   {
     title: 'Deck',
-    icon: PlanetIcon,
+    icon: VTKDeckIcon,
     link: ADMIN_DECK,
   },
   {
     title: 'Card',
-    icon: SunIcon,
+    icon: VTKCardIcon,
     link: ADMIN_CARD,
   },
   {
     title: 'Calendar',
-    icon: CalendarIcon,
+    icon: VTKCalendarIcon,
     link: ADMIN_CALENDAR,
   },
   {
     title: 'Settings',
-    icon: SettingsIcon,
+    icon: VTKSettingsIcon,
     link: ADMIN_SETTINGS,
   },
 ];
