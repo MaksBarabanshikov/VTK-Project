@@ -55,7 +55,7 @@ const AdminCard = () => {
                         borderRadius={'20px'}
                         overflow={'hidden'}
                     >
-                        <Image  src={item} />
+                        <Image src={item} />
                     </Card>
                 )) }
             </Flex>
